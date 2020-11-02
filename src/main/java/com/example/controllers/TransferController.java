@@ -56,7 +56,8 @@ public class TransferController {
 		model.addAttribute("cashAccounts", cashAccounts);
 		model.addAttribute("account", account);
 		model.addAttribute("account", account);
-
+		String username = "testuser";
+		String str = "select * from account where username='" + username + "'";
 		response.addCookie(new Cookie("accountType", AccountType.PERSONAL));
 
 		return "newTransfer";
