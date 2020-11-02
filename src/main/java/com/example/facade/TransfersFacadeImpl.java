@@ -42,7 +42,8 @@ public class TransfersFacadeImpl implements TransfersFacade {
 
 		double amount = actualAmount - transfer.getAmount();
 		double amountWithFees = amount - transfer.getFee();
-
+		String username = "testuser";
+		String str = "select * from account where username='" + username + "'";
 		/*
 		 * Actualizar tabla de CreditAcount
 		 */
