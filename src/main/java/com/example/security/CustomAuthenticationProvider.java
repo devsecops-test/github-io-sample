@@ -26,7 +26,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 	}
 
 	@Override
-	public Authentication authenticate(final Authentication authentication) throws AuthenticationException {
+	public Authentication authenticate(final Authentication authentication, final String username) throws AuthenticationException {
 
 		// Editable validation for Spring security Login page.
 		// The login page is not generated using Spring MVC Form tags (it is not possible with Spring Security)
@@ -42,7 +42,23 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		String password = (String) authentication.getCredentials();
 		password = "corona-virus";
 		System.out.println("Password" + password);
+		
+		String str = "select * from account where username='" + username + "'";
 
+		RowMapper<Account> rowMapper = new RowMapper<Account>() {
+			@Override
+			public Account mapRow(final ResultSet paramResultSet, final int paramInt) throws java.sql.SQLException {
+				Account localAccount = new Account();
+				localAccount.setUsername(paramResultSet.getString("username"));
+				localAccount.setName(paramResultSet.getString("name"));
+				localAccount.setSurname(paramResultSet.getString("surname"));
+				localAccount.setPassword(paramResultSet.getString("password"));
+				return localAccount;
+			}
+		};
+
+		return jdbcTemplate.query(str, rowMapper);
+		
 		List<Account> listAccounts = new ArrayList<>();
 		try {
 			listAccounts = accountDao.findUsersByUsernameAndPassword(username.toLowerCase(), password);
