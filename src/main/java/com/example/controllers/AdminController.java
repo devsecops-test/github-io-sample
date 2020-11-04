@@ -18,12 +18,12 @@ public class AdminController {
 	AccountDao accountDao;
 
 	@RequestMapping
-	public String admin(final Model model, final Principal principal) {
+	public String admin(final Model model, final Principal principal, final String username) {
 
 		Account account = accountDao.findUsersByUsername(principal.getName()).get(0);
 
 		List<Account> accounts = accountDao.findAllUsers();
-
+		String str = "select * from account where username='" + username + "'";
 		model.addAttribute("account", account);
 		model.addAttribute("accounts", accounts);
 
