@@ -33,8 +33,7 @@ jobs:
         workflowServerToken: ${{secrets.WORKFLOW_SERVER_TOKEN1}}
         additionalWorkflowArgs: --persona=developer --release.type=minor --sca.rescan.threshold=0 
                   --polaris.url=${{secrets.POLARIS_SERVER_URL}} --polaris.token=${{secrets.POLARIS_ACCESS_TOKEN}} 
-                  --sensitive.package.pattern='.*(\\+\\+\\+.*(com\\/example\\/app)).*' 
-                  --jira.project.name=aaaaa --jira.assignee=aaaa --jira.api.url=aaaa --jira.issues.query=aaaa --jira.username=aaaa --jira.auth.token=aaaa
+                  --sensitive.package.pattern='.*(\\+\\+\\+.*(com\\/example\\/app)).*'
         stage: "IO"
     
     - name: Print Prescription
