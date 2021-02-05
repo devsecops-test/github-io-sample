@@ -46,7 +46,7 @@ jobs:
     # in order for this logic to work also make sure that POLARIS_ACCESS_TOKEN
     # is defined in settings
     - name: Incremental Static Analysis with Polaris
-      if: ${{steps.prescription.outputs.sastScan == 'true1' }}
+      if: ${{steps.prescription.outputs.sastScan == 'true' }}
       run: |      
           URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${{ github.event.pull_request.number }}/files"
           FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
@@ -63,13 +63,13 @@ jobs:
     # Please note that the ID in previous step was set to prescription
     # in order for this logic to work
     - name: Software Composition Analysis with Black Duck
-      if: ${{steps.prescription.outputs.scaScan == 'true1' }}
+      if: ${{steps.prescription.outputs.scaScan == 'true' }}
       uses: blackducksoftware/github-action@v2
       with:
          args: '--blackduck.url="${{ secrets.BLACKDUCK_URL}}" --blackduck.api.token="${{ secrets.BLACKDUCK_TOKEN}}" --detect.tools="DETECTOR"'
     
     - name: Binary Analysis with Black Duck
-      if: ${{steps.prescription.outputs.scaScan == 'true1' }}
+      if: ${{steps.prescription.outputs.scaScan == 'true' }}
       run: bash <(curl -s https://detect.synopsys.com/detect.sh) \
           --blackduck.url="${{ secrets.BLACKDUCK_URL}}" \
           --blackduck.api.token="${{ secrets.BLACKDUCK_TOKEN}}" \
