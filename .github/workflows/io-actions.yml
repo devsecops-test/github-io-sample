@@ -24,7 +24,7 @@ jobs:
       
     - name: Synopsys Intelligent Security Scan
       id: prescription
-      uses: synopsys-sig/intelligent-security-scan@708bd6f7a87ac6a32bb2227296312eb3f978695d
+      uses: synopsys-sig/intelligent-security-scan@47d5f5e93a271258ca360499e405a083bc0f3a76
       with:
         ioServerUrl: ${{secrets.IO_SERVER_URL}}
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
@@ -56,13 +56,13 @@ jobs:
     
     - name: Synopsys Intelligent Security Scan
       if: ${{ steps.prescription.outputs.sastScan == 'true' || steps.prescription.outputs.scaScan == 'true' }}
-      uses: synopsys-sig/intelligent-security-scan@708bd6f7a87ac6a32bb2227296312eb3f978695d
+      uses: synopsys-sig/intelligent-security-scan@47d5f5e93a271258ca360499e405a083bc0f3a76
       with:
         ioServerUrl: ${{secrets.IO_SERVER_URL}}
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
         workflowVersion: 2021.04.2-alpha
-        additionalWorkflowArgs: --slack.channel.id=C015LGE7RRQ --slack.token=${{secrets.ORG_SLACK_TOKEN}} 
+        additionalWorkflowArgs: --manifest.type=json --slack.channel.id=C015LGE7RRQ --slack.token=${{secrets.ORG_SLACK_TOKEN}} 
                 --IS_SAST_ENABLED=${{steps.prescription.outputs.sastScan}} --IS_SCA_ENABLED=${{steps.prescription.outputs.scaScan}} 
                 --polaris.project.name=sig-devsecops/github-io-sample --polaris.url=${{secrets.ORG_POLARIS_SERVER_URL}} --polaris.token=${{secrets.ORG_POLARIS_ACCESS_TOKEN}} 
                 --blackduck.project.name=github-io-sample:1.0.0 --blackduck.url=${{secrets.ORG_BLACKDUCK_URL}} --blackduck.api.token=${{secrets.ORG_BLACKDUCK_TOKEN}}
