@@ -29,6 +29,7 @@ jobs:
           sed -i -e 's/\r$//' io_onboarding.sh
           chmod +x io_onboarding.sh
           ./io_onboarding.sh --io.url=${{secrets.IO_SERVER_URL}} --io.token=${{secrets.IO_SERVER_TOKEN}} --asset.id=devsecops-test/github-io-sample --calculator.meta.path=io_calculator_metadata.json --manifest.type=json
+          rm io-manifest.json
     
     - name: Synopsys Intelligent Security Scan
       id: prescription
