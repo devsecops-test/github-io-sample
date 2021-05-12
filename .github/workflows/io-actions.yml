@@ -24,7 +24,7 @@ jobs:
       
     - name: Synopsys Intelligent Security Scan
       id: prescription
-      uses: synopsys-sig/intelligent-security-scan@82fd8c4f90307fedbbca141ae27c069c74d4f9d3
+      uses: synopsys-sig/intelligent-security-scan@4a0493951de9dd75fcfac17f6e53a8c81f984090
       with:
         ioServerUrl: ${{secrets.IO_SERVER_URL}}
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
@@ -56,7 +56,7 @@ jobs:
     
     - name: Synopsys Intelligent Security Scan
       if: ${{ steps.prescription.outputs.sastScan == 'true' || steps.prescription.outputs.scaScan == 'true' }}
-      uses: synopsys-sig/intelligent-security-scan@82fd8c4f90307fedbbca141ae27c069c74d4f9d3
+      uses: synopsys-sig/intelligent-security-scan@4a0493951de9dd75fcfac17f6e53a8c81f984090
       with:
         ioServerUrl: ${{secrets.IO_SERVER_URL}}
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
