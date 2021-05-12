@@ -22,6 +22,14 @@ jobs:
     - run: git checkout HEAD^2
       if: ${{ github.event_name == 'pull_request' }}
       
+    #IO SETUP is required for devsecops persona. Can be ignored if onboarding is done through CURL or Postman 
+    - name: IO Setup
+      run: |
+        - wget "https://raw.githubusercontent.com/synopsys-sig/io-artifacts/main/io_onboarding.sh"
+        - sed -i -e 's/\r$//' io_onboarding.sh
+        - chmod +x io_onboarding.sh
+        - ./io_onboarding.sh --io.url=${{secrets.IO_SERVER_URL}} --io.token=${{secrets.IO_SERVER_TOKEN}} --asset.id=devsecops-test/github-io-sample --calculator.meta.path=io_calculator_metadata.json --manifest.type=json
+    
     - name: Synopsys Intelligent Security Scan
       id: prescription
       uses: synopsys-sig/intelligent-security-scan@47d5f5e93a271258ca360499e405a083bc0f3a76
@@ -30,8 +38,8 @@ jobs:
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
         workflowVersion: 2021.04.2-alpha
+        manifestType: json
         additionalWorkflowArgs: --polaris.url=${{secrets.POLARIS_SERVER_URL}} --polaris.token=${{secrets.POLARIS_ACCESS_TOKEN}} 
-                      --manifest.type=json
         stage: "IO"
     
     # Please note that the ID in previous step was set to prescription
@@ -62,7 +70,8 @@ jobs:
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
         workflowVersion: 2021.04.2-alpha
-        additionalWorkflowArgs: --manifest.type=json --slack.channel.id=C015LGE7RRQ --slack.token=${{secrets.ORG_SLACK_TOKEN}} 
+        manifestType: json
+        additionalWorkflowArgs: --slack.channel.id=C015LGE7RRQ --slack.token=${{secrets.ORG_SLACK_TOKEN}} 
                 --IS_SAST_ENABLED=${{steps.prescription.outputs.sastScan}} --IS_SCA_ENABLED=${{steps.prescription.outputs.scaScan}} 
                 --polaris.project.name=sig-devsecops/github-io-sample --polaris.url=${{secrets.ORG_POLARIS_SERVER_URL}} --polaris.token=${{secrets.ORG_POLARIS_ACCESS_TOKEN}} 
                 --blackduck.project.name=github-io-sample:1.0.0 --blackduck.url=${{secrets.ORG_BLACKDUCK_URL}} --blackduck.api.token=${{secrets.ORG_BLACKDUCK_TOKEN}}
