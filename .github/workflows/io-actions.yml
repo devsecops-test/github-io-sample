@@ -44,7 +44,7 @@ jobs:
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
         workflowVersion: 2021.04.2-alpha
         manifestType: json
-        additionalWorkflowArgs: --persona=devsecops --polaris.url=${{secrets.POLARIS_SERVER_URL}} --polaris.token=${{secrets.POLARIS_ACCESS_TOKEN}} 
+        additionalWorkflowArgs: --release.type=minor --polaris.url=${{secrets.POLARIS_SERVER_URL}} --polaris.token=${{secrets.POLARIS_ACCESS_TOKEN}} 
         stage: "IO"
     
     # Please note that the ID in previous step was set to prescription
