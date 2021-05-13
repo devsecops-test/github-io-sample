@@ -26,7 +26,7 @@ jobs:
     - name: IO Setup
       env:
           workflow_version: 2021.04.3-alpha
-          #manifest_type: json
+          manifest_type: json
           asset_id: devsecops-test/github-io-sample
           calculator_meta_path: io_calculator_metadata.json
       run: |
@@ -43,7 +43,7 @@ jobs:
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
         workflowVersion: 2021.04.3-alpha
-        #manifestType: json
+        manifestType: json
         additionalWorkflowArgs: --persona=devsecops --polaris.url=${{secrets.POLARIS_SERVER_URL}} --polaris.token=${{secrets.POLARIS_ACCESS_TOKEN}} 
         stage: "IO"
     
@@ -75,7 +75,7 @@ jobs:
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
         workflowVersion: 2021.04.3-alpha
-        #manifestType: json
+        manifestType: json
         additionalWorkflowArgs: --persona=devsecops --slack.channel.id=C015LGE7RRQ --slack.token=${{secrets.ORG_SLACK_TOKEN}} 
                 --IS_SAST_ENABLED=${{steps.prescription.outputs.sastScan}} --IS_SCA_ENABLED=${{steps.prescription.outputs.scaScan}} 
                 --polaris.project.name=sig-devsecops/github-io-sample --polaris.url=${{secrets.ORG_POLARIS_SERVER_URL}} --polaris.token=${{secrets.ORG_POLARIS_ACCESS_TOKEN}} 
