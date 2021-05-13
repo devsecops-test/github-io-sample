@@ -94,6 +94,7 @@
 				"dast": false,
 				"sastplusm": false,
 				"dastplusm": false,
+				"imagescan": false,
 				"dynamic": true
 			},
 			{
