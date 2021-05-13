@@ -39,7 +39,7 @@
          },
          "sca": {
             "rescanThreshold": "<<SCA_RESCAN_THRESHOLD>>"
-         }
+         },
          "imagescan": {
             "rescanThreshold": "<<SCA_RESCAN_THRESHOLD>>"
          }
