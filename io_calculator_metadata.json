@@ -94,8 +94,7 @@
 				"dast": false,
 				"sastplusm": false,
 				"dastplusm": false,
-				"imagescan": false,
-				"dynamic": true
+				"dynamic": false
 			},
 			{
 				"score_High": 40,
