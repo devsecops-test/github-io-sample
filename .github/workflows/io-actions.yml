@@ -45,7 +45,7 @@ jobs:
         workflowVersion: 2021.04.3-alpha
         manifestType: json
         additionalWorkflowArgs: --persona=devsecops --polaris.url=${{secrets.POLARIS_SERVER_URL}} --polaris.token=${{secrets.POLARIS_ACCESS_TOKEN}} 
-                      --jira.project.name=STAR --jira.assignee="Rahul Gunasekaran" --jira.api.url=https://rahulguna.atlassian.net --jira.username=rahulguna10@gmail.com --jira.auth.token=${{secrets.JIRA_TOKEN}}
+                      --jira.project.name=STAR --jira.assignee="Rahul Gunasekaran" --jira.api.url=https://rahulguna.atlassian.net --jira.username=rahulguna10@gmail.com --jira.auth.token=${{secrets.JIRA_TOKEN}} --jira.issues.query="resolution=Unresolved"
         stage: "IO"
     
     # Please note that the ID in previous step was set to prescription
