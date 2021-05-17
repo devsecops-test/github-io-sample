@@ -89,8 +89,8 @@
 			{
 				"score_High": 55,
 				"score_Low": 40,
-				"sast": false,
-				"sca": true,
+				"sast": true,
+				"sca": false,
 				"dast": false,
 				"sastplusm": false,
 				"dastplusm": false,
