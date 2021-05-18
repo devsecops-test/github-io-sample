@@ -45,7 +45,6 @@ jobs:
         workflowVersion: 2021.04.3-alpha
         manifestType: json
         additionalWorkflowArgs: --persona=devsecops --polaris.url=${{secrets.POLARIS_SERVER_URL}} --polaris.token=${{secrets.POLARIS_ACCESS_TOKEN}} 
-                      --jira.project.name=STAR --jira.assignee="Rahul Gunasekaran" --jira.api.url=https://rahulguna.atlassian.net/rest/api/latest/ --jira.username=rahulguna10@gmail.com --jira.auth.token=${{secrets.JIRA_TOKEN}} --jira.issues.query="resolution=Unresolved"
         stage: "IO"
     
     # Please note that the ID in previous step was set to prescription
@@ -78,6 +77,7 @@ jobs:
         workflowVersion: 2021.04.3-alpha
         manifestType: json
         additionalWorkflowArgs: --persona=devsecops --slack.channel.id=C015LGE7RRQ --slack.token=${{secrets.ORG_SLACK_TOKEN}} 
+                --jira.project.name=STAR --jira.assignee="Rahul Gunasekaran" --jira.api.url=https://rahulguna.atlassian.net/rest/api/latest/ --jira.username=rahulguna10@gmail.com --jira.auth.token=${{secrets.JIRA_TOKEN}}
                 --IS_SAST_ENABLED=${{steps.prescription.outputs.sastScan}} --IS_SCA_ENABLED=${{steps.prescription.outputs.scaScan}} --IS_DAST_ENABLED=false
                 --polaris.project.name=sig-devsecops/github-io-sample --polaris.url=${{secrets.ORG_POLARIS_SERVER_URL}} --polaris.token=${{secrets.ORG_POLARIS_ACCESS_TOKEN}} 
                 --blackduck.project.name=github-io-sample:1.0.0 --blackduck.url=${{secrets.ORG_BLACKDUCK_URL}} --blackduck.api.token=${{secrets.ORG_BLACKDUCK_TOKEN}}
