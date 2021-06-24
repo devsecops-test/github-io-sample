@@ -78,6 +78,7 @@ public class TransfersFacadeImpl implements TransfersFacade {
 		/*
 		 * Insertar nuevo movimiento en destino
 		 */
+		System.out.println("Hello");
 		desc = transfer.getDescription();
 		activityDaoImpl.insertNewActivity(transfer.getDate(), "TRANSFER: " + desc, transfer.getToAccount(),
 				InsecureBankUtils.round(transfer.getAmount(), 2), InsecureBankUtils.round(amountTotal, 2));
