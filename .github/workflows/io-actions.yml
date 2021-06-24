@@ -25,7 +25,7 @@ jobs:
     #IO SETUP is required for devsecops persona. Can be ignored if onboarding is done through CURL or Postman 
     - name: IO Setup
       env:
-          workflow_version: 2021.04.2
+          workflow_version: 2021.6.0-alpha
           manifest_type: json
           asset_id: devsecops-test/github-io-sample
           calculator_meta_path: io_calculator_metadata.json
@@ -42,7 +42,7 @@ jobs:
         ioServerUrl: ${{secrets.IO_SERVER_URL}}
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
-        workflowVersion: 2021.04.2
+        workflowVersion: 2021.6.0-alpha
         manifestType: json
         additionalWorkflowArgs: --persona=devsecops --polaris.url=${{secrets.POLARIS_SERVER_URL}} --polaris.token=${{secrets.POLARIS_ACCESS_TOKEN}} 
         stage: "IO"
@@ -74,7 +74,7 @@ jobs:
         ioServerUrl: ${{secrets.IO_SERVER_URL}}
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
-        workflowVersion: 2021.04.2
+        workflowVersion: 2021.6.0-alpha
         manifestType: json
         additionalWorkflowArgs: --persona=devsecops --slack.channel.id=C015LGE7RRQ --slack.token=${{secrets.ORG_SLACK_TOKEN}} 
                 --jira.project.name=STAR --jira.assignee="Rahul Gunasekaran" --jira.api.url=https://rahulguna.atlassian.net --jira.username=rahulguna10@gmail.com --jira.auth.token=${{secrets.JIRA_TOKEN}}
