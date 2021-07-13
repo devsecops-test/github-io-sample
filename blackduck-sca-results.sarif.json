@@ -1,0 +1,192 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Blackduck SCA Report",
+          "rules": [
+            {
+              "id": "2016-1700",
+              "shortDescription": {
+                "text": "CVE-2016-1700: spring framework:4.2.3.RELEASE"
+              },
+              "helpUri": "https://www.cvedetails.com/cve/CVE-2016-1700/",
+              "help": {
+                "text": "CVE-2016-1700 : spring framework:4.2.3.RELEASE"
+              },
+              "properties": {
+                "category": "spring framework:4.2.3.RELEASE"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "2019-4386",
+              "shortDescription": {
+                "text": "CVE-2019-4386: dom4j: flexible xml framework for java:1.6.1"
+              },
+              "helpUri": "https://www.cvedetails.com/cve/CVE-2019-4386/",
+              "help": {
+                "text": "CVE-2019-4386 : dom4j: flexible xml framework for java:1.6.1"
+              },
+              "properties": {
+                "category": "dom4j: flexible xml framework for java:1.6.1"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "2017-0180",
+              "shortDescription": {
+                "text": "CVE-2017-0180: Apache Log4j: 1.2.17"
+              },
+              "helpUri": "https://www.cvedetails.com/cve/CVE-2017-0180/",
+              "help": {
+                "text": "CVE-2017-0180 : Apache Log4j: 1.2.17"
+              },
+              "properties": {
+                "category": "Apache Log4j: 1.2.17"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "2016-1603",
+              "shortDescription": {
+                "text": "CVE-2016-1603: spring security:4.0.3.RELEASE"
+              },
+              "helpUri": "https://www.cvedetails.com/cve/CVE-2016-1603/",
+              "help": {
+                "text": "CVE-2016-1603 : spring security:4.0.3.RELEASE"
+              },
+              "properties": {
+                "category": "spring security:4.0.3.RELEASE"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "2020-25638",
+              "shortDescription": {
+                "text": "CVE-2020-25638: Hibernate ORM: 5.3.0"
+              },
+              "helpUri": "https://www.cvedetails.com/cve/CVE-2017-0180/",
+              "help": {
+                "text": "CVE-2020-25638 : Hibernate ORM: 5.3.0"
+              },
+              "properties": {
+                "category": "Hibernate ORM: 5.3.0"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "level": "error",
+          "message": {
+            "text": "This component has the following security vulnerabilities:\n * 32 high Risk CVE's\n** bdsa-2016-0002\n** bdsa-2016-1700\n** bdsa-2018-0994\n** bdsa-2018-1042\n** bdsa-2016-0002\n** bdsa-2016-1700\n** bdsa-2018-0994\n** bdsa-2018-1042\n** bdsa-2016-0002\n** bdsa-2016-1700\n** bdsa-2018-0994\n** bdsa-2018-1042\n** bdsa-2016-0002\n** bdsa-2016-1700\n** bdsa-2018-0994\n** bdsa-2018-1042\n** bdsa-2016-0002\n** bdsa-2016-1700\n** bdsa-2018-0994\n** bdsa-2018-1042\n** bdsa-2016-0002\n** bdsa-2016-1700\n** bdsa-2018-0994\n** bdsa-2018-1042\n** bdsa-2016-0002\n** bdsa-2016-1700\n** bdsa-2018-0994\n** bdsa-2018-1042\n** bdsa-2016-0002\n** bdsa-2016-1700\n** bdsa-2018-0994\n** bdsa-2018-1042\n\nIssue Links:\n* https://bizdevhub.blackducksoftware.com/api/components/08f3bea3-fbfb-4f01-97dd-3f49419f3ea9/versions/074c4ad1-7c83-4f7c-8b10-d3470df86d7b\n\nInstance SHA:\n* 6ef55b7e31554358b1be89416fb08a317d67010edc0fffc61da8e840ed21d537\n\nIdentified by:\n* Blackduck"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pom.xml"
+                },
+                "region": {
+                  "startLine": 125
+                }
+              }
+            }
+          ],
+          "ruleId": "2016-1700"
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "This component has the following security vulnerabilities:\n * 1 high Risk CVE's\n** bdsa-2019-4386\n\nIssue Links:\n https://bizdevhub.blackducksoftware.com/api/components/50bca935-34bc-4929-b6f0-036189498786/versions/b9c0ceb2-41bd-47e4-bf89-8c9bfe0a57ad\n\nInstance SHA:\n* 603ac0480817836d6f1ac91b9cbde7a706053814f6b97e836f10544032160f54\n\nIdentified by:\n* Blackduck"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pom.xml"
+                },
+                "region": {
+                  "startLine": 145
+                }
+              }
+            }
+          ],
+          "ruleId": "2019-4386"
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "This component has the following security vulnerabilities:\n * 1 high Risk CVE's\n** bdsa-2017-0180\nIssue Links:\nhttps://bizdevhub.blackducksoftware.com/api/components/7460c937-f013-4c3a-bdf3-ace04cfd0304/versions/7c1fd1c3-49e5-45ee-a11c-663972de4b4e\n\nInstance SHA:\n* f0e705405741f4ff0d3142aafa73438b1df059315283958e17954440dcc3568e\n\nIdentified by:\n* Blackduck"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pom.xml"
+                },
+                "region": {
+                  "startLine": 140
+                }
+              }
+            }
+          ],
+          "ruleId": "2017-0180"
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "This component has the following security vulnerabilities:\n * 3 high Risk CVE's\n** bdsa-2016-1603\n** bdsa-2016-1603\n** bdsa-2016-1603\n\nIssue Links:\nhttps://bizdevhub.blackducksoftware.com/api/components/1bf0e1cf-5011-4bcc-a93b-83592ac648e3/versions/0a0bdb98-94d6-4563-874a-02bc922c199d\n\nInstance SHA:\n* f0e705405741f4ff0d3142aafa73438b1df059315283958e17954440dcc3568e\n\nIdentified by:\n* Blackduck"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pom.xml"
+                },
+                "region": {
+                  "startLine": 248
+                }
+              }
+            }
+          ],
+          "ruleId": "2016-1603"
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "This component has the following security vulnerabilities:\n * 2 high Risk CVE's\n** BDSA-2019-4479 \n** cve-2020-25638\n\nIssue Links:\nhttps://bizdevhub.blackducksoftware.com/api/components/cf193b88-f9ec-4af9-85b9-420c4a14b846/versions/af4ebfed-09a9-4507-b6c4-20308e755d64\n\nInstance SHA:\n* f0e705405741f4ff0d3142aafa73438b1df059315283958e17954440dcc3568e\n\nIdentified by:\n* Blackduck"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pom.xml"
+                },
+                "region": {
+                  "startLine": 181
+                }
+              }
+            }
+          ],
+          "ruleId": "2020-25638"
+        }
+      ]
+    }
+  ]
+}
