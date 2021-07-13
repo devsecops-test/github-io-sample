@@ -132,6 +132,11 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
     			<groupId>org.apache.logging.log4j</groupId>
     			<artifactId>log4j-web</artifactId>
 			    <version>2.1</version>
