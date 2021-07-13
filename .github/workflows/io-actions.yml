@@ -84,8 +84,8 @@ jobs:
         stage: "WORKFLOW"
     
     - name: Upload SARIF file
-      #if: ${{steps.prescription.outputs.sastScan == 'true' }}
+      if: ${{steps.prescription.outputs.sastScan == 'true' }}
       uses: github/codeql-action/upload-sarif@v1
       with:
         # Path to SARIF file relative to the root of the repository
-        sarif_file: blackduck-sca-results.sarif.json
+        sarif_file: workflowengine-results.sarif.json
